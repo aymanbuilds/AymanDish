@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 :root {
     --small-padding: 20px;
@@ -7,7 +7,7 @@
     --btn-padding: 12px 24px;
     --title-font: "Work Sans", sans-serif;
     --text-font: "Open Sans", sans-serif;
-    --vibes-font: "Great Vibes", cursive;
+    --vibes-font: "Dancing Script", cursive;
     --section-max-width: 1250px;
 }
 
@@ -17,7 +17,7 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -425,15 +425,56 @@ section {
 .menu-grid article .row .dots {
     flex: 1;
     height: 1px;
-    background: repeating-linear-gradient(
-        to right,
-        #666 0px,
-        #666 4px, 
-        transparent 4px,
-        transparent 8px 
-    );
-    margin-top: 15px; 
+    background: repeating-linear-gradient(to right,
+            #666 0px,
+            #666 4px,
+            transparent 4px,
+            transparent 8px);
+    margin-top: 15px;
 }
+
+#what-people-say {
+    background-image: url('../images/fresh-fruit-smoothie-cafe.webp');
+    background-size: cover;
+    min-height: 500px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.layered-informative .inner {
+    width: 100%;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: var(--large-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.layered-informative .inner h2 {
+    color: white;
+}
+
+.italic {
+    font-style: italic;
+    font-family: var(--vibes-font);
+}
+
+.layered-informative .inner p {
+    color: white;
+    text-align: center;
+}
+
+.layered-informative .inner .text{
+    font-style: italic;
+} 
+
+.layered-informative .inner .person{
+    font-size: 1.5rem;
+} 
 
 @media (max-width: 1200px) {
     figure.two-images img:not(.sup) {
@@ -511,7 +552,7 @@ section {
         height: 100px;
     }
 
-    .menu-grid{
+    .menu-grid {
         grid-template-columns: 1fr;
     }
 }
