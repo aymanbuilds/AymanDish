@@ -187,7 +187,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: #444;
 }
@@ -297,7 +297,8 @@ a.primary:hover div {
     font-family: var(--vibes-font);
 }
 
-.informative .text-content h2 div {
+.informative .text-content h2 div,
+.informative h3 div {
     display: flex;
     gap: 10px;
 }
@@ -307,7 +308,8 @@ a.primary:hover div {
     font-size: 2rem;
 }
 
-h2 .title {
+h2 .title,
+h3 .title {
     color: tomato;
     text-transform: uppercase;
     font-style: normal;
@@ -468,13 +470,67 @@ section {
     text-align: center;
 }
 
-.layered-informative .inner .text{
+.layered-informative .inner .text {
     font-style: italic;
-} 
+}
 
-.layered-informative .inner .person{
+.layered-informative .inner .person {
     font-size: 1.5rem;
-} 
+}
+
+#delicious-dishes {
+    gap: 40px;
+}
+
+#delicious-dishes h3 {
+    color: white;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+#delicious-dishes h3 span {
+    text-transform: none;
+}
+
+#delicious-dishes .display-content {
+    flex: initial;
+    width: 50%;
+}
+
+figure.two-squares {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 550px;
+}
+
+figure.two-squares img:not(.inner) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+figure .small-square {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(13, 12, 14, 0.8);
+}
+
+figure .small-square::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    background-color: rgba(53, 46, 60, 0.6);
+}
 
 @media (max-width: 1200px) {
     figure.two-images img:not(.sup) {
@@ -496,6 +552,15 @@ section {
 
     .informative .text-content {
         margin: 0 auto;
+    }
+
+    #delicious-dishes .display-content {
+        width: 100%;
+    }
+
+    figure.two-squares {
+        width: 100%;
+        height: 500px;
     }
 }
 
@@ -538,6 +603,14 @@ section {
         font-size: 2rem;
     }
 
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    #delicious-dishes h3 {
+        font-size: 1.5rem;
+    }
+
     .informative .text-content h2 .sup {
         font-size: 1.5rem;
     }
@@ -554,5 +627,10 @@ section {
 
     .menu-grid {
         grid-template-columns: 1fr;
+    }
+
+    figure .small-square {
+        width: 80%;
+        height: 40%;
     }
 }
