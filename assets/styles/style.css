@@ -325,7 +325,7 @@ a.primary:hover div {
 
 h2 .title,
 h3 .title {
-    color: tomato;
+    color: rgb(230, 85, 59);
     text-transform: uppercase;
     font-style: normal;
 }
