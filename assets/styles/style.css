@@ -736,6 +736,14 @@ footer .copyright {
         --large-padding: 30px;
     }
 
+    .header-inner-wrapper {
+        background-color: var(--footer-copyright-bg);
+    }
+
+    header.main {
+        background-image: none;
+    }
+
     .mini-title {
         font-size: 1rem;
     }
