@@ -16,6 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     closeMenuButton.addEventListener('click', () => {
+        hideMainMenu();
+    });
+
+    mainHeaderNav.querySelectorAll('a').forEach(hyperlink => {
+        hyperlink.addEventListener('click', () => {
+            hideMainMenu();
+        });
+    });
+
+    function hideMainMenu() {
         const hyperlinks = Array.from(mainHeaderNav.querySelectorAll('li a'));
         const numHyperlinks = hyperlinks.length;
         hyperlinks.reverse().forEach((hyperlink, index) => {
@@ -28,6 +38,25 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             mainHeaderNav.classList.remove('appear');
         }, totalHyperlinkAnimationTime - 150);
-    });
+    }
     // Header Menu End **************************************************************
+
+    const sections = document.querySelectorAll("main section");
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); 
+                }
+            });
+        },
+        {
+            threshold: 0.1 
+        }
+    );
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
